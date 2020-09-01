@@ -125,7 +125,6 @@ class CarController():
       self.turning_signal_timer = 100  # Disable for 1.0 Seconds after blinker turned off
     elif CS.left_blinker_flash or CS.right_blinker_flash: # Optima has blinker flash signal only
       self.turning_signal_timer = 100
-    
     if self.turning_indicator_alert: # set and clear by interface
       lkas_active = 0
     if self.turning_signal_timer > 0:
@@ -231,7 +230,7 @@ class CarController():
       # SPAS11 50hz
       if (frame % 2) == 0:
         if CS.mdps11_stat == 7 and not self.mdps11_stat_last == 7:
-          self.en_spas == 7
+          self.en_spas = 7
           self.en_cnt = 0
 
         if self.en_spas == 7 and self.en_cnt >= 8:
